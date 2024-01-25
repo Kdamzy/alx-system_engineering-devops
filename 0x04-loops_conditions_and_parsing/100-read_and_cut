@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+#displays the content of the file.
+
+while read -r passwd;
+do
+    echo "$passwd" | cut -d ":" -f1,2,9
+done < "/etc/passwd"
