@@ -4,21 +4,15 @@
 sudo apt-get update 
 sudo apt-get install -y nginx 
 
-# starting nginx service
-sudo service nginx start
-
-# allowing nginx on firewall
-sudo ufw allow 'Nginx HTTP'
-
-# Give the editing access to the user
-sudo chown -R "$USER":"$USER" /var/www/html
-sudo chmod -R 755 /var/www
-
-# Backup the default index
-cp /var/www/html/index.nginx-debian.html /var/www/html/index.nginx-debian.html.bckp
-
-# Creat a new index
-echo -e "Hello World!" | dd status=none of=/var/www/html/index.nginx-debian.html
-
+mkdir /etc/nginx/html
+touch /etc/nginx/html/index.html
+echo "Holberton School" > /etc/nginx/html/index.html
+printf %s "server {
+     listen      80 default_server;
+     listen      [::]:80 default_server;
+     root        /etc/nginx/html;
+     index       index.html index.htm;
+}
+" > /etc/nginx/sites-available/default
 # Restart nginx
 sudo service nginx restart
