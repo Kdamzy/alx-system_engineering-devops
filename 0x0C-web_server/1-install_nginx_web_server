@@ -1,10 +1,25 @@
 #!/usr/bin/env bash
 # Install nginx on your web-01 server
 
-sudo apt-get update -y
+sudo apt-get update -y -qq && \
+	 sudo apt-get install nginx -y
 
-sudo apt-get install nginx -y
 
-echo 'Hello World!' > /var/www/html/index.html
+# start nginx service
+sudo service nginx start
 
-service nginx restart
+# allowing nginx on firewall
+sudo ufw allow 'Nginx HTTP'
+
+# Give access to users
+sudo chown -R "$USER":"$USER" /var/www/html
+sudo chmod -R 755 /var/www
+
+# Backup default index
+cp /var/www/html/index.nginx-debian.html /var/www/html/index.nginx-debian.html.bckp
+
+# Creating new index
+echo -e "Hello World!" | dd status=none of=/var/www/html/index.nginx-debian.html
+
+# Restarting nginx
+sudo service nginx restart
