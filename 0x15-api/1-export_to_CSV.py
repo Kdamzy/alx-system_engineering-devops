@@ -9,17 +9,6 @@ import sys
 if __name__ == '__main__':
     USER_ID = sys.argv[1]
     url_of_user = 'https://jsonplaceholder.typicode.com/users/' + USER_ID
-    #!/usr/bin/python3
-"""Export api to csv"""
-import csv
-import json
-import requests
-import sys
-
-
-if __name__ == '__main__':
-    USER_ID = sys.argv[1]
-    url_of_user = 'https://jsonplaceholder.typicode.com/users/' + USER_ID
     res = requests.get(url_of_user)
 
     user_name = res.json().get('username')
