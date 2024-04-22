@@ -16,8 +16,8 @@ if __name__ == '__main__':
     USERNAME = user_res.json().get('username')
 
     url_of_task = url_of_user + '/todos'
-    task_res = requests.get(url_of_task)
-    tasks = task_res.json()
+    user_res = requests.get(url_of_task)
+    tasks = user_res.json()
 
     dict_data = {USER_ID: []}
     for task in tasks:
