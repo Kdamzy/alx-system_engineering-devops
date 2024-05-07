@@ -1,16 +1,11 @@
 #!/usr/bin/python3
-"""
-prints the titles of the first 10 hot posts
-"""
+"""prints the titles of the first 10 hot posts"""
 
 from requests import get
 
 
 def top_ten(subreddit):
-    """
-    function that prints the titles of first
-    10 hot posts listed for a given subreddit
-    """
+    """function that prints the titles of first 10 hot posts"""
 
     url = "https://www.reddit.com/r/{}/about.json".format(subreddit)
     headers = {
