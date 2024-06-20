@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""prints the titles of the first 10 hot posts"""
+"""prints the titles of the first 10 hot post"""
 
 from requests import get
 

@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""querier the Reddit API"""
+"""querier the Reddit api"""
 
 from requests import get
 

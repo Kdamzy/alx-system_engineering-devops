@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" prases the title of all hot articles"""
+""" prases the title of all hot article"""
 
 from collections import Counter
 import requests

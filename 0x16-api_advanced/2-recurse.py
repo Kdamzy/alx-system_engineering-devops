@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Recursive function that queries the Reddit API"""
+"""Recursive function that queries the Reddit api"""
 from requests import get
 
 REDDIT = "https://www.reddit.com/"
